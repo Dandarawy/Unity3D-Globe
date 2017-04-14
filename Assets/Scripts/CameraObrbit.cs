@@ -43,7 +43,7 @@ public class CameraObrbit : MonoBehaviour {
             target.x = targetOnDown.x + (mouse.x - mouseOnDown.x) * 0.005f* zoomDamp;
             target.y = targetOnDown.y + (mouse.y - mouseOnDown.y) * 0.005f* zoomDamp;
             
-            target.y = Mathf.Clamp(target.y, -Mathf.PI / 2+0.01f, Mathf.PI / 2- +0.01f);
+            target.y = Mathf.Clamp(target.y, -Mathf.PI / 2 + 0.01f, Mathf.PI / 2 - 0.01f);
         }
 
         distanceTarget -= Input.GetAxis("Mouse ScrollWheel");
