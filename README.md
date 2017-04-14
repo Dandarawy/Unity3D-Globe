@@ -1,5 +1,7 @@
 # Unity3D-Globe
-Unity3D Implementation for Chrome Experiment [WebGL Globe](http://www.chromeexperiments.com/globe)
+Unity3D Implementation for Chrome Experiment [WebGL Globe](http://www.chromeexperiments.com/globe) 
+
+Try a [Live Demo](https://dandarawy.github.io/Unity3D-Globe/)
 
 ![Unity3D Globe Screenshot](https://dl.dropboxusercontent.com/s/az5hqprnlzz0mjh/Unity3DGlobe-main.png?dl=0)
 
