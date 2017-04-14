@@ -37,3 +37,4 @@ You can change the structure of the `JSON` file or even the data source as requi
 4. Point Prefab: a prefab to the point which will be placed for each data value 
 * After loading the data Wrap it in array of `SeriesData`, the SeriesData is just a class that has a name and `float` array, the `float` array represent the series data in the following order [latitude, longitude, magnitude, latitude, longitude, magnitude, ...]
 * Call the `CreateMeshes` function from your `DataVisualizer` and send it the series array that you have just created
+* To switch the shown series just call `ActivateSeries` function on visualizer and send it the index of the series that you need to show.
