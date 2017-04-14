@@ -58,9 +58,9 @@ public class DataVisualizer : MonoBehaviour {
     {
         Color valueColor = Colors.Evaluate(value);
         Vector3 pos;
-        pos.x = -0.5f * Mathf.Cos((lng - 90) * Mathf.Deg2Rad) * Mathf.Cos(lat * Mathf.Deg2Rad);
+        pos.x = 0.5f * Mathf.Cos((lng) * Mathf.Deg2Rad) * Mathf.Cos(lat * Mathf.Deg2Rad);
         pos.y = 0.5f * Mathf.Sin(lat * Mathf.Deg2Rad);
-        pos.z = -0.5f * Mathf.Sin((lng - 90) * Mathf.Deg2Rad) * Mathf.Cos(lat * Mathf.Deg2Rad);
+        pos.z = 0.5f * Mathf.Sin((lng) * Mathf.Deg2Rad) * Mathf.Cos(lat * Mathf.Deg2Rad);
         p.transform.parent = Earth.transform;
         p.transform.position = pos;
         p.transform.localScale = new Vector3(1, 1, Mathf.Max(0.001f, value * ValueScaleMultiplier));
