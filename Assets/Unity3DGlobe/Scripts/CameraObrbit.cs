@@ -20,24 +20,51 @@ public class CameraObrbit : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.touchCount > 0)
         {
-            down = true;
-            mouseOnDown.x = Input.mousePosition.x;
-            mouseOnDown.y = -Input.mousePosition.y;
+            if(Input.touches[0].phase== TouchPhase.Began)
+            {
+                down = true;
+                mouseOnDown.x = Input.touches[0].position.x;
+                mouseOnDown.y = -Input.touches[0].position.y;
 
-            targetOnDown.x = target.x;
-            targetOnDown.y = target.y;
+                targetOnDown.x = target.x;
+                targetOnDown.y = target.y;
+            }
+            else if(Input.touches[0].phase== TouchPhase.Canceled||
+                Input.touches[0].phase== TouchPhase.Ended)
+            {
+                down = false;
+            }
         }
-        else if(Input.GetMouseButtonUp(0))
+        else
         {
-            down = false;
+            if (Input.GetMouseButtonDown(0))
+            {
+                down = true;
+                mouseOnDown.x = Input.mousePosition.x;
+                mouseOnDown.y = -Input.mousePosition.y;
+
+                targetOnDown.x = target.x;
+                targetOnDown.y = target.y;
+            }
+            else if (Input.GetMouseButtonUp(0))
+            {
+                down = false;
+            }
         }
         if(down)
         {
-            mouse.x = Input.mousePosition.x;
-            mouse.y = -Input.mousePosition.y;
-
+            if (Input.touchCount > 0)
+            {
+                mouse.x = Input.touches[0].position.x;
+                mouse.y = -Input.touches[0].position.y;
+            }
+            else
+            {
+                mouse.x = Input.mousePosition.x;
+                mouse.y = -Input.mousePosition.y;
+            }
             float zoomDamp = distance / 1;
 
             target.x = targetOnDown.x + (mouse.x - mouseOnDown.x) * 0.005f* zoomDamp;
